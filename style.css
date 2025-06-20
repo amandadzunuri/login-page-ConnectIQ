@@ -68,6 +68,11 @@ p {
     border: 1px solid #ccc;
 }
 
+.login-form input:focus {
+    border-color: #265df2;
+    outline: none;
+}
+
 .submit-btn {
     margin-top: 20px;
     padding: 12px;
@@ -113,8 +118,14 @@ p {
     
   }
 
-  .logo-icon {
-    width: 30px;
-    height: 30px;
+  .logo-icon-small {
+    width: 24px;
+    height: 24px;
+    border-radius: 10px;
+  }
+
+  .logo-icon-medium {
+    width: 32px;
+    height: 32px;
     border-radius: 10px;
   }

@@ -8,13 +8,35 @@
     <link rel="icon" type="image/png" href="aset/wifi.webp" />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
+
+<script>
+    document.querySelector('.login-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        
+        if(!email.includes('@') || !email.includes('.')){
+            alert('Email tidak valid!');
+            return;
+        }
+
+        if(password.length < 6){
+            alert('Password minimal 6 karakter!');
+            return;
+        }
+
+        alert('Login berhasil!');
+    });
+</script>
+
 <body>
     <div class="container">
         <div class="login-section">
             <div class="login-content">
                 <!--Logo-->
                 <div class="logo">
-                    <img src="aset/wifi.webp" alt="logo" class="logo-icon">
+                    <img src="aset/wifi.webp" alt="logo" class="logo-icon-medium">
                     <h2>ConnectIQ</h2>
                 </div>
                 <h4>ACCOUNT</h4>
@@ -24,14 +46,18 @@
                 <!--Form-->
                 <form class="login-form">
                     <label>Email Adress</label>
-                    <input type="email" placeholder="Enter your email adress" required>
+                    <input type="email" id="email" placeholder="Enter your email adress" required>
+                    <div class="error-msg email-error"></div>
+
                     <label>Password</label>
-                    <input type="password" placeholder="Enter your password" required>
+                    <input type="password" id="password" placeholder="Enter your password" required>
+                    <div class="error-msg password-error"></div>
+
                     <button type="submit" class="submit-btn">Submit</button>
 
                     <!--Button google-->
                     <div class="google-signin">
-                        <img src="aset/google.png" alt="google-logo" class="logo-icon">
+                        <img src="aset/google.png" alt="google-logo" class="logo-icon-small">
                         <label>Sign in with Google</label>
                     </div>
                 </form>
